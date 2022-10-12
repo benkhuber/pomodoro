@@ -17,4 +17,90 @@
 	clear: both;
 }
 
+body {
+  background-color: #749F82;
+  font-family: sans-serif;
+  color: white;
+}
 
+#header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 34rem;
+}
+
+.card {
+  /* width: 32rem;
+  margin: 1rem;
+  padding: 1rem;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  border: solid 2px white; */
+}
+
+#title {
+  font-size: 3rem;
+  padding: 0.5rem 1rem;
+
+}
+
+#clock {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+}
+
+#countdown {
+  font-size: 12rem;
+  border: solid white 10px;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+
+.button-23 {
+  background-color: #483838;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 20px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: 10rem;
+}
+
+.button-23:focus-visible {
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow .2s;
+}
+
+.button-23:active {
+  background-color: #425F57;
+  border-color: #000000;
+  transform: scale(.96);
+}
+
+.button-23:disabled {
+  border-color: #DDDDDD;
+  color: #DDDDDD;
+  cursor: not-allowed;
+  opacity: 1;
+}

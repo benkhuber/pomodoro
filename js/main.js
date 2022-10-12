@@ -31,7 +31,9 @@ function worldTime() {
 deadlineStore = 0
 
 function getDeadline() {
-    deadlineStore = Date.now() + 3000
+    deadlineStore = Date.now() + 1.5e6
+    //test rest timer
+    // deadlineStore = Date.now() + 3000
 }
 
 function restDeadline() {
