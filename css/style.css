@@ -19,7 +19,7 @@
 
 body {
   background-color: #749F82;
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: white;
 }
 
@@ -36,15 +36,6 @@ body {
   width: 34rem;
 }
 
-.card {
-  /* width: 32rem;
-  margin: 1rem;
-  padding: 1rem;
-  justify-self: center;
-  align-self: center;
-  text-align: center;
-  border: solid 2px white; */
-}
 
 #title {
   font-size: 3rem;
@@ -63,6 +54,8 @@ body {
   border-radius: 8px;
   padding: 2rem;
   margin: 2rem;
+  width: 36rem;
+  text-align: center;
 }
 
 
@@ -73,7 +66,7 @@ body {
   box-sizing: border-box;
   color: white;
   cursor: pointer;
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   margin: 0;
   outline: none;

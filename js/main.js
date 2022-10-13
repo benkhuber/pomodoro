@@ -4,6 +4,8 @@ let timer = document.querySelector('#countdown')
 button.addEventListener('click', getDeadline)
 button.addEventListener('click', countdown)
 
+worldTime()
+
 function worldTime() {
     let hours = new Date().getHours()
     let minutes = new Date().getMinutes()
@@ -31,16 +33,14 @@ function worldTime() {
 deadlineStore = 0
 
 function getDeadline() {
-    deadlineStore = Date.now() + 1.5e6
+    // deadlineStore = Date.now() + 1.5e6
     //test rest timer
-    // deadlineStore = Date.now() + 3000
+    deadlineStore = Date.now() + 3000
 }
 
 function restDeadline() {
     deadlineStore = Date.now() + 300000
 }
-
-
 
 function countdown() {
     let deadline = deadlineStore
@@ -60,6 +60,8 @@ function countdown() {
     } else {
     setTimeout(countdown, 1000)
     }
+
+    button.innerText = 'Stop'
 }
 
 function restCountdown() {
@@ -75,6 +77,3 @@ function restCountdown() {
     timer.innerHTML = `${minutes}:${displaySeconds}`
     setTimeout(restCountdown, 1000)
 }
-
-
-worldTime()
