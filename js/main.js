@@ -29,7 +29,7 @@ function worldTime() {
 
 let timerStorage = {
     focusTime: true,
-    startButton: true,
+    startButtonStatus: true,
     deadline: 0,
     timeLeftInSeconds: 0,
     displayMinutes: 25,
@@ -41,6 +41,15 @@ function refreshTimerDisplay() {
         timerStorage.displaySeconds = '0' + timerStorage.displaySeconds
     }
     timer.innerHTML = `${timerStorage.displayMinutes}:${timerStorage.displaySeconds}`
+    startStopButtonSwitch()
+}
+
+function startStopButtonSwitch() {
+    if (timerStorage.startButtonStatus) {
+        button.innerHTML = 'Start'
+    } else if (!timerStorage.startButtonStatus) {
+        button.innerHTML = 'Stop'
+    }
 }
 
 function getDeadline() {
@@ -72,12 +81,14 @@ function countdown() {
     timerStorage.timeLeftInSeconds = Math.round((timerStorage.deadline - currentTime) / 1000)
     timerStorage.displayMinutes = Math.floor(timerStorage.timeLeftInSeconds / 60)
     timerStorage.displaySeconds = timerStorage.timeLeftInSeconds - (timerStorage.displayMinutes * 60)
+    timerStorage.startButtonStatus = false
 
     refreshTimerDisplay()
     if (timerStorage.timeLeftInSeconds === 0) {
         timerStorage.displayMinutes = 0
         timerStorage.displaySeconds = 5
         timerStorage.focusTime = false
+        timerStorage.startButtonStatus = true
         refreshTimerDisplay()
     } else {
         setTimeout(countdown, 1000)
@@ -89,11 +100,14 @@ function restCountdown() {
     timerStorage.timeLeftInSeconds = Math.round((timerStorage.deadline - currentTime) / 1000)
     timerStorage.displayMinutes = Math.floor(timerStorage.timeLeftInSeconds / 60)
     timerStorage.displaySeconds = timerStorage.timeLeftInSeconds - (timerStorage.displayMinutes * 60)
+    timerStorage.startButtonStatus = false
+    
     refreshTimerDisplay()
     if (timerStorage.timeLeftInSeconds === 0) {
         timerStorage.displayMinutes = 25
         timerStorage.displaySeconds = 0
         timerStorage.focusTime = true
+        timerStorage.startButtonStatus = true
         refreshTimerDisplay()
     } else {
         setTimeout(restCountdown, 1000)
