@@ -1,8 +1,10 @@
 let clock = document.querySelector('#clock')
 let button = document.querySelector('#startTimer')
 let timer = document.querySelector('#countdown')
+let webpageTitle = document.querySelector('#webpageTitle')
 button.addEventListener('click', launchCountdown)
 button.addEventListener('click', launchRestCountdown)
+
 
 worldTime()
 
@@ -32,7 +34,7 @@ let timerStorage = {
     startButtonStatus: true,
     deadline: 0,
     timeLeftInSeconds: 0,
-    displayMinutes: 25,
+    displayMinutes: 0,
     displaySeconds: 0,
 }
 
@@ -40,6 +42,7 @@ function refreshTimerDisplay() {
     if (timerStorage.displaySeconds < 10) {
         timerStorage.displaySeconds = '0' + timerStorage.displaySeconds
     }
+    webpageTitle.innerHTML = `${timerStorage.displayMinutes}:${timerStorage.displaySeconds}`
     timer.innerHTML = `${timerStorage.displayMinutes}:${timerStorage.displaySeconds}`
     startStopButtonSwitch()
 }
@@ -53,8 +56,8 @@ function startStopButtonSwitch() {
 }
 
 function getDeadline() {
-    // timerStorage.deadline = Date.now() + 1.5e6
-    timerStorage.deadline = Date.now() + 3000
+    let focusLength = document.querySelector('#focusLength').value
+    timerStorage.deadline = Date.now() + (focusLength * 60000)
 }
 
 function restDeadline() {

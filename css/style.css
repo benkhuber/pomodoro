@@ -28,12 +28,21 @@ body {
   justify-content: space-between;
 }
 
+.pageBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
   width: 34rem;
+  background-color: #88b998;
+  border: solid 8px #88b998;
+  border-radius: 8px;
 }
 
 
@@ -49,12 +58,10 @@ body {
 }
 
 #countdown {
-  font-size: 12rem;
-  border: solid white 10px;
-  border-radius: 8px;
-  padding: 2rem;
-  margin: 2rem;
-  width: 36rem;
+  font-size: 10rem;
+  padding: 1rem;
+  margin: 1rem;
+  width: 30rem;
   text-align: center;
 }
 

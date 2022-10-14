@@ -6,7 +6,7 @@
   	<meta name="keywords" content="one, two, three">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<title>Blank Template</title>
+		<title id="webpageTitle">Party</title>
 
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="css/normalize.css">
@@ -18,14 +18,27 @@
 		<section id='clock' class='card'></section>
 	</header>
 
+	<section>How long do you want to focus?
+		<select id='focusLength'>
+			<option>5</optioN>
+			<option>25</option>
+			<option>20</option>
+		</select> minutes.
+	</section>
+
+	<section>How long do you want to rest?
+		<select>
+			<option>5</option>
+			<option>10</option>
+		</select> minutes.
+	</section>
+
+	<section class='pageBody'>
 		<div class='container'>
-
-			<section id='countdown' class='card'>25:00</section>
-
+			<section id='countdown' class='card'></section>
 			<button class="button-23" role="button" id="startTimer">Start</button>
-
-
 		</div>
+	</section>
 
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
