@@ -56,8 +56,10 @@ function startStopButtonSwitch() {
 }
 
 function getDeadline() {
+    if (timerStorage.startButtonStatus != false) {
     let focusLength = document.querySelector('#focusLength').value
     timerStorage.deadline = Date.now() + (focusLength * 60000)
+    }
 }
 
 function restDeadline() {
